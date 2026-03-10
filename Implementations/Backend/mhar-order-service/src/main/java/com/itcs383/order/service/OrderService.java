@@ -64,7 +64,7 @@ public class OrderService {
 
             // Calculate totals
             BigDecimal itemsTotal = calculateItemsTotal(request.getOrderItems());
-            BigDecimal deliveryFee = calculateDeliveryFee(request.getRestaurantId(), itemsTotal);
+            BigDecimal deliveryFee = calculateDeliveryFee(itemsTotal);
             BigDecimal totalAmount = itemsTotal.add(deliveryFee);
 
             // Create order entity
@@ -292,14 +292,14 @@ public class OrderService {
             .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
-    private BigDecimal calculateDeliveryFee(Long restaurantId, BigDecimal itemsTotal) {
+    private BigDecimal calculateDeliveryFee(BigDecimal itemsTotal) {
         // TODO: Implement complex delivery fee calculation based on:
         // - Distance between restaurant and delivery address
-        // - Restaurant delivery fee settings (using restaurantId)
+        // - Restaurant delivery fee settings (restaurantId parameter will be needed)
         // - Time of day (surge pricing)
         // - Order total (free delivery threshold)
         
-        // Simple implementation for now - restaurantId will be used in future implementation
+        // Simple implementation for now
         BigDecimal freeDeliveryThreshold = new BigDecimal("300.00");
         if (itemsTotal.compareTo(freeDeliveryThreshold) >= 0) {
             return BigDecimal.ZERO;
