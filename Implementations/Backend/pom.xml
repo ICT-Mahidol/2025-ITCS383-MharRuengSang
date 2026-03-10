@@ -22,10 +22,10 @@
     </properties>
 
     <modules>
-        <module>mhar-api-gateway</module>
-        <module>mhar-order-service</module>
-        <module>mhar-restaurant-service</module>
-        <module>mhar-common</module>
+        <module>api-gateway</module>
+        <module>order-service</module>
+        <module>restaurant-service</module>
+        <module>common</module>
     </modules>
 
     <dependencyManagement>
@@ -65,7 +65,7 @@
             <!-- Common module -->
             <dependency>
                 <groupId>com.itcs383</groupId>
-                <artifactId>mhar-common</artifactId>
+                <artifactId>common</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
