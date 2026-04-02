@@ -35,17 +35,36 @@ start_service() {
     echo -e "${GREEN}✓ $service_name started (PID: $(cat ../logs/${service_name}.pid))${NC}"
 }
 
+# Get the script directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Create logs directory
-mkdir -p logs
+mkdir -p "$SCRIPT_DIR/logs"
+
+# Start Database and Cache containers
+echo -e "${BLUE}Starting PostgreSQL and Redis containers...${NC}"
+cd "$SCRIPT_DIR"
+docker-compose up -d postgres redis
+
+# Wait a moment for databases to be ready
+echo "Waiting for databases to initialize (up to 30s)..."
+for i in {1..15}; do
+    if docker exec mhar-postgres pg_isready -U mhar_user -d mhar_orders > /dev/null 2>&1; then
+        echo -e "${GREEN}✓ Databases are ready!${NC}"
+        # Give initialization script a few more seconds on first run
+        sleep 5
+        break
+    fi
+    echo -n "."
+    sleep 2
+done
+echo ""
 
 # Check ports
 echo "Checking ports..."
 check_port 8080 || exit 1
 check_port 8081 || exit 1
 check_port 8082 || exit 1
-
-# Get the script directory
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Start services
 echo ""

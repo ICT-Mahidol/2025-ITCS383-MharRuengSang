@@ -50,5 +50,12 @@ for port in 8080 8081 8082; do
     fi
 done
 
+# Stop docker containers
+echo ""
+echo "Stopping Docker containers..."
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCRIPT_DIR"
+docker-compose down
+
 echo ""
 echo -e "${GREEN}✅ All services stopped${NC}"
