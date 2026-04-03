@@ -149,6 +149,9 @@ Log in with any of the following demo accounts, then enter any 6-digit OTP (e.g.
 | Sarah Wilson | `sarah@foodexpress.com` | `Sarah123!` | Customer | Customer Dashboard |
 | Bangkok Street Food | `restaurant@foodexpress.com` | `Restaurant123!` | Restaurant | Restaurant Dashboard |
 | Sushi Master | `sushi@foodexpress.com` | `Sushi123!` | Restaurant | Restaurant Dashboard |
+| Italiano Pizzeria | `italiano@foodexpress.com` | `Italiano123!` | Restaurant | Restaurant Dashboard |
+| Big Burger House | `burger@foodexpress.com` | `Burger123!` | Restaurant | Restaurant Dashboard |
+| Ramen Noodle Bar | `ramen@foodexpress.com` | `Ramen123!` | Restaurant | Restaurant Dashboard |
 | Mike Chen | `rider@foodexpress.com` | `Rider123!` | Rider | Rider Dashboard |
 | Admin User | `admin@foodexpress.com` | `Admin123!` | Admin | Admin Dashboard |
 

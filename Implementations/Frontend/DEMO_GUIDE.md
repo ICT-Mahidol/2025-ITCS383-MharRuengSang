@@ -107,8 +107,9 @@ A complete food delivery platform frontend demo with four user roles: Customer, 
 ### Restaurants
 - Bangkok Street Food (Thai) - 0.8 km
 - Sushi Master (Japanese) - 1.2 km
-- Pizza Paradise (Western) - 2.5 km
-- Burger Bistro (Western) - 0.5 km
+- Italiano Pizzeria (Italian) - 2.5 km
+- Big Burger House (American) - 0.5 km
+- Ramen Noodle Bar (Japanese) - 3.1 km
 
 ### Orders
 - Pre-loaded with 2 sample orders in different stages
