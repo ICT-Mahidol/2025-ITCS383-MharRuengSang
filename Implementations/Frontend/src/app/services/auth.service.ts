@@ -49,12 +49,12 @@ export interface LoginResponse {
 
 // Demo accounts shared between login and verifyOtp mock fallbacks
 const MOCK_USERS: Record<string, { name: string; role: string; id: number }> = {
-  'customer@foodexpress.com':   { name: 'Demo Customer',       role: 'CUSTOMER',   id: 100 },
-  'sarah@foodexpress.com':      { name: 'Sarah Wilson',         role: 'CUSTOMER',   id: 101 },
+  'customer@foodexpress.com':   { name: 'John Doe',             role: 'CUSTOMER',   id: 1 },
+  'sarah@foodexpress.com':      { name: 'Sarah Wilson',         role: 'CUSTOMER',   id: 5 },
   'restaurant@foodexpress.com': { name: 'Bangkok Street Food',  role: 'RESTAURANT', id: 2 },
   'sushi@foodexpress.com':      { name: 'Sushi Master',         role: 'RESTAURANT', id: 6 },
-  'rider@foodexpress.com':      { name: 'Demo Rider',           role: 'RIDER',      id: 200 },
-  'admin@foodexpress.com':      { name: 'Demo Admin',           role: 'ADMIN',      id: 300 },
+  'rider@foodexpress.com':      { name: 'Mike Chen',            role: 'RIDER',      id: 3 },
+  'admin@foodexpress.com':      { name: 'Admin User',           role: 'ADMIN',      id: 4 },
 };
 
 /**
